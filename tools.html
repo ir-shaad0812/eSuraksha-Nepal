@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" data-lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Interactive Tools — eSuraksha Nepal</title>
+  <meta name="description" content="Practice digital safety with interactive tools — scam simulator, password checker, and safety quiz." />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Mukta:wght@400;500;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ═══════════════ HEADER ═══════════════ -->
+  <header class="header" id="header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">
+        <span class="logo-icon">🛡️</span>
+        <div class="logo-text">
+          <span class="logo-name">eSuraksha</span>
+          <span class="logo-tagline">Safe Digital Nepal</span>
+        </div>
+      </a>
+      <nav class="nav-desktop" id="navDesktop">
+        <a href="index.html" class="nav-link" data-lang-en>Home</a>
+        <a href="index.html" class="nav-link" data-lang-np>गृहपृष्ठ</a>
+        <a href="digital-rights.html" class="nav-link" data-lang-en>Digital Rights</a>
+        <a href="digital-rights.html" class="nav-link" data-lang-np>डिजिटल अधिकार</a>
+        <a href="tools.html" class="nav-link active" data-lang-en>Interactive Tools</a>
+        <a href="tools.html" class="nav-link active" data-lang-np>उपकरणहरू</a>
+        <a href="issues.html" class="nav-link" data-lang-en>Issues &amp; Challenges</a>
+        <a href="issues.html" class="nav-link" data-lang-np>मुद्दाहरू</a>
+        <a href="resources.html" class="nav-link" data-lang-en>Resources &amp; Help</a>
+        <a href="resources.html" class="nav-link" data-lang-np>स्रोत र सहयोग</a>
+      </nav>
+      <div class="nav-controls">
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+          <span id="themeIcon">🌙</span>
+        </button>
+        <button class="lang-toggle" id="langToggle" aria-label="Toggle language">
+          <span class="lang-flag">🌐</span>
+          <span id="langLabel">EN</span>
+        </button>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+    <nav class="nav-mobile" id="navMobile" hidden>
+      <a href="index.html" class="nav-link" data-lang-en>Home</a>
+      <a href="index.html" class="nav-link" data-lang-np>गृहपृष्ठ</a>
+      <a href="digital-rights.html" class="nav-link" data-lang-en>Digital Rights</a>
+      <a href="digital-rights.html" class="nav-link" data-lang-np>डिजिटल अधिकार</a>
+      <a href="tools.html" class="nav-link active" data-lang-en>Interactive Tools</a>
+      <a href="tools.html" class="nav-link active" data-lang-np>उपकरणहरू</a>
+      <a href="issues.html" class="nav-link" data-lang-en>Issues &amp; Challenges</a>
+      <a href="issues.html" class="nav-link" data-lang-np>मुद्दाहरू</a>
+      <a href="resources.html" class="nav-link" data-lang-en>Resources &amp; Help</a>
+      <a href="resources.html" class="nav-link" data-lang-np>स्रोत र सहयोग</a>
+    </nav>
+  </header>
+
+  <!-- ═══════════════ PAGE HERO ═══════════════ -->
+  <section class="page-hero">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="index.html">Home</a>
+        <span class="breadcrumb-sep">›</span>
+        <span data-lang-en>Interactive Tools</span>
+        <span data-lang-np>अन्तरक्रियात्मक उपकरणहरू</span>
+      </div>
+      <div class="page-hero-content">
+        <span class="section-badge" data-lang-en>Hands-On Learning</span>
+        <span class="section-badge" data-lang-np>व्यावहारिक सिकाइ</span>
+        <h1 class="page-title" data-lang-en>Interactive Safety Tools</h1>
+        <h1 class="page-title" data-lang-np>अन्तरक्रियात्मक सुरक्षा उपकरणहरू</h1>
+        <p class="page-desc" data-lang-en>Practice identifying scams, test your password strength, and take a safety quiz — all designed for Nepal's digital context.</p>
+        <p class="page-desc" data-lang-np>ठगी पहिचान गर्ने अभ्यास गर्नुहोस्, पासवर्ड शक्ति परीक्षण गर्नुहोस्, र सुरक्षा क्विज दिनुहोस् — सबै नेपालको डिजिटल सन्दर्भमा डिजाइन गरिएको।</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ TOOLS TABS ═══════════════ -->
+  <section class="section tools-section">
+    <div class="container">
+      <!-- Tab Navigation -->
+      <div class="tools-tabs" data-aos>
+        <button class="tool-tab active" data-tab="scam-simulator">
+          <span class="tool-tab-icon">🎭</span>
+          <span data-lang-en>Scam Simulator</span>
+          <span data-lang-np>ठगी सिमुलेटर</span>
+        </button>
+        <button class="tool-tab" data-tab="password-checker">
+          <span class="tool-tab-icon">🔐</span>
+          <span data-lang-en>Password Checker</span>
+          <span data-lang-np>पासवर्ड जाँचकर्ता</span>
+        </button>
+        <button class="tool-tab" data-tab="safety-quiz">
+          <span class="tool-tab-icon">📝</span>
+          <span data-lang-en>Safety Quiz</span>
+          <span data-lang-np>सुरक्षा क्विज</span>
+        </button>
+      </div>
+
+      <!-- ═══════ TAB A: SCAM SIMULATOR ═══════ -->
+      <div class="tool-panel active" id="panel-scam-simulator">
+        <div class="scam-section">
+          <div class="section-header">
+            <h2 data-lang-en>Can You Spot the Scam?</h2>
+            <h2 data-lang-np>के तपाईं ठगी पहिचान गर्न सक्नुहुन्छ?</h2>
+            <p data-lang-en>Real-world scam scenarios from Nepal — test your ability to identify them.</p>
+            <p data-lang-np>नेपालबाट वास्तविक ठगी परिदृश्यहरू — तिनीहरूलाई पहिचान गर्ने तपाईंको क्षमता परीक्षण गर्नुहोस्।</p>
+          </div>
+
+          <!-- Age Tabs -->
+          <div class="age-tabs" data-aos>
+            <button class="age-tab active" data-age="student">
+              <span data-lang-en>🎓 Student</span>
+              <span data-lang-np>🎓 विद्यार्थी</span>
+            </button>
+            <button class="age-tab" data-age="parent">
+              <span data-lang-en>👨‍👩‍👧 Parent</span>
+              <span data-lang-np>👨‍👩‍👧 अभिभावक</span>
+            </button>
+            <button class="age-tab" data-age="professional">
+              <span data-lang-en>💼 Professional</span>
+              <span data-lang-np>💼 पेशेवर</span>
+            </button>
+          </div>
+
+          <!-- Phone Simulator -->
+          <div class="phone-simulator" data-aos>
+            <div class="phone-frame">
+              <div class="phone-notch"></div>
+              <div class="phone-screen">
+                <div class="msg-header">
+                  <span class="msg-sender" id="scamSender"></span>
+                  <span class="msg-time">Now</span>
+                </div>
+                <div class="msg-body" id="scamMessage"></div>
+              </div>
+              <div class="phone-actions" id="scamActions"></div>
+              <div class="phone-feedback">
+                <p id="scamFeedbackInner"></p>
+              </div>
+              <div class="phone-controls">
+                <button class="btn btn-primary" id="scamNext" style="display:none; justify-content:center; gap:8px; width:100%;">
+                  <span data-lang-en>Next Message &#8594;</span>
+                  <span data-lang-np>अर्को सन्देश &#8594;</span>
+                </button>
+                <span class="scam-counter" id="scamCounter"></span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Info Cards -->
+          <div class="info-cards-grid" data-aos>
+            <div class="info-card">
+              <span class="info-card-icon">🎣</span>
+              <h3 data-lang-en>Phishing</h3>
+              <h3 data-lang-np>फिसिङ</h3>
+              <p data-lang-en>Fake messages pretending to be from trusted sources like banks to steal your info.</p>
+              <p data-lang-np>तपाईंको जानकारी चोर्न बैंकहरू जस्ता विश्वसनीय स्रोतबाट भएको जस्तो देखाउने नक्कली सन्देशहरू।</p>
+            </div>
+            <div class="info-card">
+              <span class="info-card-icon">💰</span>
+              <h3 data-lang-en>Lottery Scams</h3>
+              <h3 data-lang-np>लटरी ठगी</h3>
+              <p data-lang-en>Fake prize notifications requiring payment to claim non-existent winnings.</p>
+              <p data-lang-np>अस्तित्वमा नभएको जिताउने दाबी गर्न भुक्तानी आवश्यक पार्ने नक्कली पुरस्कार सूचनाहरू।</p>
+            </div>
+            <div class="info-card">
+              <span class="info-card-icon">👤</span>
+              <h3 data-lang-en>Impersonation</h3>
+              <h3 data-lang-np>नक्कल</h3>
+              <p data-lang-en>Scammers pretending to be friends or officials to trick you into sending money.</p>
+              <p data-lang-np>तपाईंलाई पैसा पठाउन छल गर्न साथी वा अधिकारी भएको जस्तो देखाउने ठगहरू।</p>
+            </div>
+            <div class="info-card">
+              <span class="info-card-icon">💼</span>
+              <h3 data-lang-en>Job Scams</h3>
+              <h3 data-lang-np>रोजगार ठगी</h3>
+              <p data-lang-en>Fake job offers requiring upfront investment or personal information.</p>
+              <p data-lang-np>अग्रिम लगानी वा व्यक्तिगत जानकारी आवश्यक पार्ने नक्कली रोजगार प्रस्तावहरू।</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ═══════ TAB B: PASSWORD CHECKER ═══════ -->
+      <div class="tool-panel" id="panel-password-checker">
+        <div class="password-section">
+          <div class="section-header">
+            <h2 data-lang-en>Password Strength Checker</h2>
+            <h2 data-lang-np>पासवर्ड शक्ति जाँचकर्ता</h2>
+            <p data-lang-en>Test how strong your password is with Nepal-specific vulnerability detection.</p>
+            <p data-lang-np>नेपाल-विशिष्ट कमजोरी पत्ता लगाउने सहित तपाईंको पासवर्ड कत्तिको बलियो छ परीक्षण गर्नुहोस्।</p>
+          </div>
+
+          <div class="password-grid" data-aos>
+            <div class="tool-card">
+              <h3 data-lang-en>🔑 Check Your Password</h3>
+              <h3 data-lang-np>🔑 आफ्नो पासवर्ड जाँच गर्नुहोस्</h3>
+              <div class="password-input-wrap">
+                <input type="password" id="passwordInput" placeholder="Enter password to test..." autocomplete="off" />
+                <button class="toggle-vis" id="togglePwVis" aria-label="Toggle visibility">👁️</button>
+              </div>
+              <div class="strength-bar-wrap">
+                <div class="strength-bar" id="strengthBar"></div>
+              </div>
+              <p class="strength-label" id="strengthLabel" data-lang-en>Enter a password to check</p>
+              <div class="password-criteria">
+                <div class="criterion" id="critLen"><span class="crit-icon">○</span> <span data-lang-en>At least 8 characters</span><span data-lang-np>कम्तिमा ८ अक्षर</span></div>
+                <div class="criterion" id="critUpper"><span class="crit-icon">○</span> <span data-lang-en>Uppercase letter</span><span data-lang-np>ठूलो अक्षर</span></div>
+                <div class="criterion" id="critLower"><span class="crit-icon">○</span> <span data-lang-en>Lowercase letter</span><span data-lang-np>सानो अक्षर</span></div>
+                <div class="criterion" id="critNum"><span class="crit-icon">○</span> <span data-lang-en>Number</span><span data-lang-np>संख्या</span></div>
+                <div class="criterion" id="critSpecial"><span class="crit-icon">○</span> <span data-lang-en>Special character</span><span data-lang-np>विशेष अक्षर</span></div>
+                <div class="criterion" id="critLength12"><span class="crit-icon">○</span> <span data-lang-en>12+ characters (recommended)</span><span data-lang-np>१२+ अक्षर (सिफारिस गरिएको)</span></div>
+              </div>
+              <div class="pw-suggestions" id="pwSuggestions"></div>
+            </div>
+          </div>
+
+          <!-- Password Tips -->
+          <div class="password-tips-section" data-aos>
+            <h3 class="tips-heading" data-lang-en>🛡️ Password Tips for Nepali Users</h3>
+            <h3 class="tips-heading" data-lang-np>🛡️ नेपाली प्रयोगकर्ताहरूका लागि पासवर्ड सुझावहरू</h3>
+            <div class="info-cards-grid tips-grid">
+              <div class="info-card">
+                <span class="info-card-icon">🚫</span>
+                <h3 data-lang-en>Avoid Common Words</h3>
+                <h3 data-lang-np>सामान्य शब्दहरू नप्रयोग गर्नुहोस्</h3>
+                <p data-lang-en>Don't use "nepal123", "kathmandu", "namaste", or your phone number as passwords.</p>
+                <p data-lang-np>"nepal123", "kathmandu", "namaste", वा आफ्नो फोन नम्बर पासवर्डको रूपमा प्रयोग नगर्नुहोस्।</p>
+              </div>
+              <div class="info-card">
+                <span class="info-card-icon">🔑</span>
+                <h3 data-lang-en>Use Passphrases</h3>
+                <h3 data-lang-np>पासफ्रेज प्रयोग गर्नुहोस्</h3>
+                <p data-lang-en>Create passwords from Nepali phrases — e.g., "SagarMatha@8848m!" is strong and memorable.</p>
+                <p data-lang-np>नेपाली वाक्यांशहरूबाट पासवर्ड बनाउनुहोस् — जस्तै, "SagarMatha@8848m!" बलियो र सम्झन सजिलो छ।</p>
+              </div>
+              <div class="info-card">
+                <span class="info-card-icon">🔄</span>
+                <h3 data-lang-en>Unique Passwords</h3>
+                <h3 data-lang-np>अद्वितीय पासवर्डहरू</h3>
+                <p data-lang-en>Use different passwords for eSewa, bank apps, email, and social media accounts.</p>
+                <p data-lang-np>eSewa, बैंक एप, इमेल, र सामाजिक सञ्जाल खाताहरूको लागि फरक पासवर्ड प्रयोग गर्नुहोस्।</p>
+              </div>
+              <div class="info-card">
+                <span class="info-card-icon">📱</span>
+                <h3 data-lang-en>Enable 2FA</h3>
+                <h3 data-lang-np>2FA सक्षम गर्नुहोस्</h3>
+                <p data-lang-en>Turn on two-factor authentication for extra security on all your important accounts.</p>
+                <p data-lang-np>तपाईंका सबै महत्त्वपूर्ण खाताहरूमा अतिरिक्त सुरक्षाको लागि दुई-कारक प्रमाणीकरण सक्रिय गर्नुहोस्।</p>
+              </div>
+              <div class="info-card">
+                <span class="info-card-icon">📝</span>
+                <h3 data-lang-en>Password Manager</h3>
+                <h3 data-lang-np>पासवर्ड प्रबन्धक</h3>
+                <p data-lang-en>Use a password manager to securely store all your different passwords in one place.</p>
+                <p data-lang-np>आफ्ना सबै फरक पासवर्डहरू एकै ठाउँमा सुरक्षित रूपमा भण्डारण गर्न पासवर्ड प्रबन्धक प्रयोग गर्नुहोस्।</p>
+              </div>
+              <div class="info-card">
+                <span class="info-card-icon">🔄</span>
+                <h3 data-lang-en>Regular Updates</h3>
+                <h3 data-lang-np>नियमित अपडेटहरू</h3>
+                <p data-lang-en>Change passwords every 3-6 months, especially for banking and financial apps.</p>
+                <p data-lang-np>प्रत्येक ३-६ महिनामा पासवर्ड परिवर्तन गर्नुहोस्, विशेष गरी बैंकिङ र वित्तीय एपहरूका लागि।</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ═══════ TAB C: SAFETY QUIZ ═══════ -->
+      <div class="tool-panel" id="panel-safety-quiz">
+        <div class="quiz-section">
+          <div class="quiz-container" data-aos>
+
+            <!-- Quiz Start -->
+            <div class="quiz-start" id="quizStart">
+              <div class="quiz-start-icon">📝</div>
+              <h3 data-lang-en>Digital Safety Quiz</h3>
+              <h3 data-lang-np>डिजिटल सुरक्षा क्विज</h3>
+              <p data-lang-en>Test your cybersecurity knowledge with Nepal-focused questions. 10 questions, instant results!</p>
+              <p data-lang-np>नेपालमा केन्द्रित प्रश्नहरूसँग आफ्नो साइबर सुरक्षा ज्ञान परीक्षण गर्नुहोस्। १० प्रश्न, तुरुन्त नतिजा!</p>
+              <button class="btn btn-primary btn-lg" id="quizStartBtn">
+                <span data-lang-en>Start Quiz</span>
+                <span data-lang-np>क्विज सुरु गर्नुहोस्</span>
+              </button>
+            </div>
+
+            <!-- Quiz Questions -->
+            <div class="quiz-question-wrap" id="quizQuestionWrap" hidden>
+              <div class="quiz-progress">
+                <div class="quiz-progress-bar" id="quizProgressBar"></div>
+              </div>
+              <div class="quiz-progress-text" id="quizProgressText"></div>
+              <h3 class="quiz-question" id="quizQuestion"></h3>
+              <div class="quiz-options" id="quizOptions"></div>
+              <div class="quiz-nav">
+                <button class="btn btn-primary btn-lg" id="quizNextBtn" disabled>
+                  <span data-lang-en>Next Question →</span>
+                  <span data-lang-np>अर्को प्रश्न →</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Quiz Results -->
+            <div class="quiz-results" id="quizResults" hidden>
+              <div class="quiz-score-ring">
+                <svg viewBox="0 0 120 120">
+                  <circle class="ring-bg" cx="60" cy="60" r="52" />
+                  <circle class="ring-fill" id="scoreFill" cx="60" cy="60" r="52"
+                    stroke-dasharray="326.73" stroke-dashoffset="326.73" />
+                </svg>
+                <span class="quiz-score-text" id="scoreText">0%</span>
+              </div>
+              <h3 class="quiz-score-label" id="quizScoreLabel"></h3>
+              <div class="quiz-tips" id="quizTips"></div>
+              <div class="quiz-result-actions">
+                <button class="btn btn-primary" id="quizRetake">
+                  <span data-lang-en>Retake Quiz</span>
+                  <span data-lang-np>क्विज फेरि दिनुहोस्</span>
+                </button>
+                <button class="btn btn-outline" id="pledgeBtn">
+                  <span data-lang-en>Take Safety Pledge</span>
+                  <span data-lang-np>सुरक्षा प्रतिज्ञा लिनुहोस्</span>
+                </button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════ PLEDGE MODAL ═══════════════ -->
+  <div class="modal-overlay" id="pledgeModal" hidden>
+    <div class="modal-card">
+      <button class="modal-close" id="pledgeModalClose">&times;</button>
+      <h2 class="modal-title" data-lang-en>🛡️ Digital Safety Pledge</h2>
+      <h2 class="modal-title" data-lang-np>🛡️ डिजिटल सुरक्षा प्रतिज्ञा</h2>
+      <div class="pledge-content">
+        <div class="pledge-text">
+          <p data-lang-en>I pledge to:</p>
+          <p data-lang-np>म प्रतिज्ञा गर्छु:</p>
+          <ul>
+            <li data-lang-en>Use strong, unique passwords for all accounts</li>
+            <li data-lang-np>सबै खाताहरूको लागि बलियो, अद्वितीय पासवर्ड प्रयोग गर्ने</li>
+            <li data-lang-en>Think before clicking on suspicious links</li>
+            <li data-lang-np>शंकास्पद लिंकहरूमा क्लिक गर्नु अघि सोच्ने</li>
+            <li data-lang-en>Report cyber crimes to Nepal Police (Dial 100)</li>
+            <li data-lang-np>नेपाल प्रहरीमा साइबर अपराध रिपोर्ट गर्ने (१०० डायल गर्नुहोस्)</li>
+            <li data-lang-en>Protect my personal data and digital privacy</li>
+            <li data-lang-np>मेरो व्यक्तिगत डाटा र डिजिटल गोपनीयता सुरक्षित गर्ने</li>
+            <li data-lang-en>Help educate others about online safety</li>
+            <li data-lang-np>अरूलाई अनलाइन सुरक्षाबारे शिक्षित गर्न मद्दत गर्ने</li>
+          </ul>
+        </div>
+        <div class="pledge-form">
+          <label for="pledgeName" data-lang-en>Your Name:</label>
+          <label for="pledgeName" data-lang-np>तपाईंको नाम:</label>
+          <input type="text" id="pledgeName" placeholder="Enter your name" />
+          <button class="btn btn-primary" id="pledgeSignBtn">
+            <span data-lang-en>Sign Pledge &amp; Generate Certificate</span>
+            <span data-lang-np>प्रतिज्ञामा हस्ताक्षर गर्नुहोस् र प्रमाणपत्र बनाउनुहोस्</span>
+          </button>
+        </div>
+        <div class="certificate-preview" id="certificatePreview" style="display:none;">
+          <canvas id="certificateCanvas" width="800" height="500"></canvas>
+          <button class="btn btn-primary" id="downloadCertBtn">
+            <span data-lang-en>Download Certificate</span>
+            <span data-lang-np>प्रमाणपत्र डाउनलोड गर्नुहोस्</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════ FOOTER ═══════════════ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo">
+            <span class="logo-icon">🛡️</span>
+            <div class="logo-text">
+              <span class="logo-name">eSuraksha</span>
+              <span class="logo-tagline">Safe Digital Nepal</span>
+            </div>
+          </a>
+          <p data-lang-en>Empowering Nepali citizens with digital safety knowledge and tools for a more secure online experience.</p>
+          <p data-lang-np>नेपाली नागरिकहरूलाई सुरक्षित अनलाइन अनुभवका लागि डिजिटल सुरक्षा ज्ञान र उपकरणहरूद्वारा सशक्त बनाउँदै।</p>
+        </div>
+        <div class="footer-links">
+          <h4 data-lang-en>Quick Links</h4>
+          <h4 data-lang-np>द्रुत लिंकहरू</h4>
+          <ul>
+            <li><a href="index.html" data-lang-en>Home</a><a href="index.html" data-lang-np>गृहपृष्ठ</a></li>
+            <li><a href="digital-rights.html" data-lang-en>Digital Rights</a><a href="digital-rights.html" data-lang-np>डिजिटल अधिकार</a></li>
+            <li><a href="tools.html" data-lang-en>Interactive Tools</a><a href="tools.html" data-lang-np>उपकरणहरू</a></li>
+            <li><a href="issues.html" data-lang-en>Issues &amp; Challenges</a><a href="issues.html" data-lang-np>मुद्दा र चुनौतीहरू</a></li>
+            <li><a href="resources.html" data-lang-en>Resources &amp; Help</a><a href="resources.html" data-lang-np>स्रोत र सहयोग</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4 data-lang-en>Emergency</h4>
+          <h4 data-lang-np>आपतकालीन</h4>
+          <ul>
+            <li><a href="tel:100" data-lang-en>Cyber Bureau: 100</a><a href="tel:100" data-lang-np>साइबर ब्यूरो: १००</a></li>
+            <li><a href="tel:1098" data-lang-en>Child Rights: 1098</a><a href="tel:1098" data-lang-np>बाल अधिकार: १०९८</a></li>
+            <li><a href="tel:1145" data-lang-en>Women Helpline: 1145</a><a href="tel:1145" data-lang-np>महिला हेल्पलाइन: ११४५</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 eSuraksha Nepal. Built for Web Wizards Innovation Lab.</p>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
+
+  <script src="js/navigation.js"></script>
+  <script src="js/language.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/scam-simulator.js"></script>
+  <script src="js/password-checker.js"></script>
+  <script src="js/quiz.js"></script>
+</body>
+</html>
