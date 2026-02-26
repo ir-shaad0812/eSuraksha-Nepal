@@ -1060,28 +1060,89 @@ input { font-family: inherit; }
   margin-bottom: 20px;
 }
 
-/* Password Input */
+/* Password Input - Premium Design */
 .password-input-wrap {
   position: relative;
-  margin-bottom: 16px;
+  margin-bottom: 20px;
 }
+
 .password-input {
   width: 100%;
-  padding: 14px 50px 14px 16px;
-  border: 2px solid var(--border);
-  border-radius: var(--radius-sm);
-  font-size: 1rem;
-  background: var(--bg);
+  padding: 16px 60px 16px 20px;
+  border: 2px solid transparent;
+  border-radius: 12px;
+  font-size: 1.05rem;
+  font-weight: 500;
+  background: linear-gradient(var(--bg), var(--bg)) padding-box,
+              linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%) border-box;
   color: var(--text);
-  transition: border-color var(--transition);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08),
+              inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  letter-spacing: 0.3px;
 }
+
+.password-input::placeholder {
+  color: var(--text-muted);
+  font-weight: 400;
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+}
+
+.password-input:hover {
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.15),
+              inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  transform: translateY(-1px);
+}
+
 .password-input:focus {
   outline: none;
-  border-color: var(--primary);
+  background: linear-gradient(var(--bg), var(--bg)) padding-box,
+              linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%) border-box;
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.25),
+              0 0 0 4px rgba(102, 126, 234, 0.1),
+              inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
 }
+
+.password-input:focus::placeholder {
+  opacity: 0.5;
+}
+
+.toggle-vis {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border: none;
+  border-radius: 8px;
+  width: 40px;
+  height: 40px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3);
+  opacity: 0.9;
+}
+
+.toggle-vis:hover {
+  opacity: 1;
+  transform: translateY(-50%) scale(1.08);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+}
+
+.toggle-vis:active {
+  transform: translateY(-50%) scale(0.95);
+}
+
+/* Legacy class support */
 .toggle-pw-vis {
   position: absolute;
-  right: 8px;
+  right: 12px;
   top: 50%;
   transform: translateY(-50%);
 }
@@ -1120,7 +1181,10 @@ input { font-family: inherit; }
   gap: 6px;
   margin-bottom: 16px;
 }
-.criteria-item {
+
+/* Support both class names */
+.criteria-item,
+.criterion {
   display: flex;
   align-items: center;
   gap: 8px;
@@ -1128,20 +1192,28 @@ input { font-family: inherit; }
   color: var(--text-secondary);
   transition: color var(--transition);
 }
-.criteria-icon {
+
+.criteria-icon,
+.crit-icon {
   font-size: .9rem;
   width: 20px;
   text-align: center;
 }
-.criteria-item.met {
+
+.criteria-item.met,
+.criterion.met {
   color: var(--success);
 }
-.criteria-item.met .criteria-icon::after {
+
+.criteria-item.met .criteria-icon::after,
+.criterion.met .crit-icon::after {
   content: '';
 }
 
 /* Password Suggestions */
-.password-suggestions {
+/* Support both class names */
+.password-suggestions,
+.pw-suggestions {
   font-size: .85rem;
   color: var(--text-secondary);
   padding: 12px 16px;
@@ -1150,7 +1222,11 @@ input { font-family: inherit; }
   display: none;
   line-height: 1.6;
 }
-.password-suggestions.visible { display: block; }
+
+.password-suggestions.visible,
+.pw-suggestions.visible {
+  display: block;
+}
 
 /* Privacy Accordion */
 .accordion-item {
